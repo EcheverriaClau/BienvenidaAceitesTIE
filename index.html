@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🌿 Mini Guía Aceites - TIE</title>
   <link rel="preload" href="icon-192.png" as="image">
+  <link rel="manifest" href="manifest.json">
   <style>
     :root {
       --morado: #5e3b76;
@@ -126,5 +127,16 @@
       document.getElementById('btnVerGuia').addEventListener('click', abrirGuia);
     });
   </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg) {
+        console.log('✅ Service Worker registrado con éxito:', reg);
+      }).catch(function(error) {
+        console.error('❌ Falló el registro del Service Worker:', error);
+      });
+  }
+</script>
+
 </body>
 </html>
