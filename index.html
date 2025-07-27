@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌿 Mini Guía Aceites - TIE</title>
+  <link rel="preload" href="icon-192.png" as="image">
+  <style>
+    :root {
+      --morado: #5e3b76;
+      --dorado: rgb(133, 91, 7);
+      --fondo: #1a1a1a;
+      --texto: #f0e8f9;
+      --accent: #a678de;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      color: var(--dorado);
+    }
+    p {
+      color: var(--texto);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .ayla-button {
+      background: var(--morado);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      border: 2px solid var(--dorado);
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--dorado);
+    }
+    .ayla-button:hover {
+      background: #3c244b;
+      box-shadow: 0 0 15px var(--accent);
+    }
+    .input-nombre {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--dorado);
+      background: #2d2d2d;
+      color: var(--texto);
+      margin-bottom: 1rem;
+    }
+    input[type="text"] {
+  max-width: 300px;
+  width: 90%;
+}
+    .hidden {
+      display: none;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--morado);
+      font-size: 0.9rem;
+      color: #947112;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <img src="icon-192.png" alt="Logo TIE" class="logo"/>
+
+  <!-- Pregunta inicial por el nombre -->
+  <div id="preguntaNombre">
+    <h1>Bienvenid@ 🌙<br> ¿Cómo te llamas?</h1>
+    <input type="text" id="nombreInput" placeholder="Tu nombre..." class="input-nombre"/>
+    <br/>
+    <button class="ayla-button" onclick="guardarNombre()">Comenzar</button>
+  </div>
+
+  <!-- Sección de bienvenida -->
+  <div id="bienvenida" class="hidden">
+    <h1>¡Hola <span id="nombreUsuario"></span>!</h1>
+    <p>Gracias por explorar el mundo natural con nosotros.<br>Accede a tu mini guía de aceites 💜</p>
+    <button class="ayla-button" onclick="abrirGuia()">🌿 Ver Mini Guía</button>
+  </div>
+
+  <!-- Footer -->
+  <footer> © TIE  ✨ Guía Holística Interactiva de Aceites 2025 | Canadá
+  </footer>
+
+  <script>
+    const nombreGuardado = localStorage.getItem('nombre_usuario');
+    const bienvenidaDiv = document.getElementById('bienvenida');
+    const preguntaNombreDiv = document.getElementById('preguntaNombre');
+    const nombreSpan = document.getElementById('nombreUsuario');
+
+    if (nombreGuardado) {
+      nombreSpan.textContent = nombreGuardado;
+      bienvenidaDiv.classList.remove('hidden');
+      preguntaNombreDiv.classList.add('hidden');
+    }
+
+    function guardarNombre() {
+      const nombre = document.getElementById('nombreInput').value.trim();
+      if (nombre) {
+        localStorage.setItem('nombre_usuario', nombre);
+        nombreSpan.textContent = nombre;
+        bienvenidaDiv.classList.remove('hidden');
+        preguntaNombreDiv.classList.add('hidden');
+      } else {
+        alert("Por favor ingresa tu nombre para continuar.");
+      }
+    }
+
+    function abrirGuia() {
+      // Abre tu guía limitada
+      window.open('https://echeverriaclau.github.io/guia-aceites-esenciales/', '_blank');
+    }
+    if (nombre.length < 2) {
+  alert("Por favor ingresa un nombre válido.");
+  return;
+}
+
+  </script>
+</body>
+</html>
