@@ -54,10 +54,7 @@
       color: var(--texto);
       margin-bottom: 1rem;
     }
-    input[type="text"] {
-  max-width: 300px;
-  width: 90%;
-}
+
     .hidden {
       display: none;
     }
@@ -81,7 +78,7 @@
 
   <!-- Pregunta inicial por el nombre -->
   <div id="preguntaNombre">
-    <h1>Bienvenid@ 🌙<br> ¿Cómo te llamas?</h1>
+    <h1>Hola 🌙<br> ¿Cómo te llamas?</h1>
     <input type="text" id="nombreInput" placeholder="Tu nombre..." class="input-nombre"/>
     <br/>
     <button class="ayla-button" onclick="guardarNombre()">Comenzar</button>
@@ -126,10 +123,6 @@
       // Abre tu guía limitada
       window.open('https://echeverriaclau.github.io/guia-aceites-esenciales/', '_blank');
     }
-    if (nombre.length < 2) {
-  alert("Por favor ingresa un nombre válido.");
-  return;
-}
 
   </script>
 </body>
