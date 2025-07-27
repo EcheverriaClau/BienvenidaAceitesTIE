@@ -54,7 +54,6 @@
       color: var(--texto);
       margin-bottom: 1rem;
     }
-
     .hidden {
       display: none;
     }
@@ -81,31 +80,24 @@
     <h1>Hola 🌙<br> ¿Cómo te llamas?</h1>
     <input type="text" id="nombreInput" placeholder="Tu nombre..." class="input-nombre"/>
     <br/>
-    <button class="ayla-button" onclick="guardarNombre()">Comenzar</button>
+    <button id="btnComenzar" class="ayla-button">Comenzar</button>
   </div>
 
   <!-- Sección de bienvenida -->
   <div id="bienvenida" class="hidden">
     <h1>¡Hola <span id="nombreUsuario"></span>!</h1>
     <p>Gracias por explorar el mundo natural con nosotros.<br>Accede a tu mini guía de aceites 💜</p>
-    <button class="ayla-button" onclick="abrirGuia()">🌿 Ver Mini Guía</button>
+    <button id="btnVerGuia" class="ayla-button">🌿 Ver Mini Guía</button>
   </div>
 
   <!-- Footer -->
-  <footer> © TIE  ✨ Guía Holística Interactiva de Aceites 2025 | Canadá
-  </footer>
+  <footer> © TIE ✨ Guía Holística Interactiva de Aceites 2025 | Canadá </footer>
 
   <script>
     const nombreGuardado = localStorage.getItem('nombre_usuario');
     const bienvenidaDiv = document.getElementById('bienvenida');
     const preguntaNombreDiv = document.getElementById('preguntaNombre');
     const nombreSpan = document.getElementById('nombreUsuario');
-
-    if (nombreGuardado) {
-      nombreSpan.textContent = nombreGuardado;
-      bienvenidaDiv.classList.remove('hidden');
-      preguntaNombreDiv.classList.add('hidden');
-    }
 
     function guardarNombre() {
       const nombre = document.getElementById('nombreInput').value.trim();
@@ -120,10 +112,19 @@
     }
 
     function abrirGuia() {
-      // Abre tu guía limitada
       window.open('https://echeverriaclau.github.io/guia-aceites-esenciales/', '_blank');
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+      if (nombreGuardado) {
+        nombreSpan.textContent = nombreGuardado;
+        bienvenidaDiv.classList.remove('hidden');
+        preguntaNombreDiv.classList.add('hidden');
+      }
+
+      document.getElementById('btnComenzar').addEventListener('click', guardarNombre);
+      document.getElementById('btnVerGuia').addEventListener('click', abrirGuia);
+    });
   </script>
 </body>
 </html>
