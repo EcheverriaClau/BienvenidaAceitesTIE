@@ -1,115 +1,130 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guía Aceites Esenciales dōTERRA</title>
-  <link rel="stylesheet" href="aceites.css" />
-  <link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#a855f7" />
-<link rel="icon" sizes="192x192" href="icon-192.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌿 Mini Guide des Huiles - TIE</title>
+  <link rel="preload" href="icon-192.png" as="image">
+  <style>
+    :root {
+      --morado: #5e3b76;
+      --dorado: rgb(133, 91, 7);
+      --fondo: #1a1a1a;
+      --texto: #f0e8f9;
+      --accent: #a678de;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      color: var(--dorado);
+    }
+    p {
+      color: var(--texto);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .ayla-button {
+      background: var(--morado);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      border: 2px solid var(--dorado);
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--dorado);
+    }
+    .ayla-button:hover {
+      background: #3c244b;
+      box-shadow: 0 0 15px var(--accent);
+    }
+    .input-nombre {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--dorado);
+      background: #2d2d2d;
+      color: var(--texto);
+      margin-bottom: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--morado);
+      font-size: 0.9rem;
+      color: #947112;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-     <button id="toggleSidebar" class="sidebar-toggle">🧴 </button>
 
-<!-- Panel lateral -->
-<aside id="sidebar" class="sidebar collapsed">
-    <button id="closeSidebar" class="close-btn">✖</button>
-  <div class="sidebar-content">
+  <!-- Logo -->
+  <img src="icon-192.png" alt="Logo TIE" class="logo"/>
 
-    <h2>💧 Formas de Uso</h2>
-    <p><strong>🌬️ Aromático:</strong><br> La mayoría se puede utilizar en <b>difusores</b> o directamente para apoyar ánimo, enfoque, relajación o purificación del aire (Cypress se usa para balance emocional, Eucalyptus para limpiar pulmones).</p>
-    <p><strong>💚 Tópico:</strong> <br> Para aplicar en la <b>piel o cabello</b>. Según la categoría, se aplican directamente o en dilución en piel, músculos o cuero cabelludo (como Rosemary para el cabello, Arborvitae para limpieza o protección).</p>
-    <p><strong>🍋 Interno:</strong> <br> Varios se pueden ingerir en <b>cápsulas o agregados a bebidas</b> (Frankincense para bienestar celular, Fennel para digestión, OnGuard para apoyo inmune).</p>
-     <div style="text-align: center;">
-  <img src="icon-192.png" width="70" height="60">
-</div>
-
-    <h2>🧴 Categorías de Uso </h2>
-
-    <h3>1. Tópicos 💚<br><small> (Se puede aplicar en la piel sin diluir)</small></h3>
-    <p>Estos aceites tienen una química suficientemente <b>suave para uso directo</b>. Entre ellos se incluyen:</p>
-    <ul><em>
-      <li>Arborvitae, Basil, Blue Tansy, Cardamom, Cilantro, Clary Sage, Coriander, Cypress, Douglas Fir, Frankincense, Grapefruit, Green Mandarin, Helichrysum, Juniper Berry, Lavender, Lemon, Marjoram, Melissa, Myrrh, Patchouli, Pink Pepper, Roman Chamomile, Rosemary, Sandalwood, Siberian Fir, Spikenard, Tangerine, Tea Tree (Melaleuca), Turmeric, Vetiver, Wild Orange, Ylang Ylang, Yarrow Pom, además de toda la línea Touch® </li></em>
-    </ul> <p>Total estimado: ~35 aceites</p>
-
-    <h3>2. Diluir 💧 <small><br>(Siempre se deben usar con aceite portador de coco o similares)</small></h3>
-    <p>Necesitan dilución antes de aplicar en la piel:</p>
-    <ul><em>
-      <li>Cassia, Clove, Cinnamon Bark, Thyme, Oregano</li></em>
-    </ul><p>Total: 5 aceites</p>
-
-    <h3>3. Sensibles 🛡️<small><br>(Dilución recomendada <b>para pieles sensibles y niños)</b></small></h3>
-    <p>Para evitar irritaciones, se aconseja diluir:</p>
-    <ul><em>
-      <li>Bergamot, Cedarwood, Black Pepper, Copaiba, Eucalyptus, Fennel, Geranium, Ginger, Lemongrass, Lime, Peppermint, Petitgrain, Spearmint, Wintergreen </li></em>
-    </ul><p>Total: 14 aceites</p>
-
-    <h3>4. Uso Interno <br> 🍋 <small>(Apto para consumo en cantidades controladas)</small></h3>
-    <p>Aprobados para uso interno, ya sea en <B> cápsulas, bebidas o alimentos</B>:</p>
-    <ul><em>
-      <li>Basil, Bergamot, Black Pepper, Cardamom, Cassia, Cilantro, Cinnamon Bark, Clary Sage, Clove, Copaiba, Coriander, Fennel, Frankincense, Geranium, Ginger, Grapefruit, Helichrysum, Juniper Berry, Lavender, Lemon, Lemongrass, Lime, Marjoram, Melaleuca (Tea Tree), Melissa, Myrrh, Oregano, Patchouli, Peppermint, Petitgrain, Roman Chamomile, Rosemary, Sandalwood (incluyendo hawaiano & siberiano), Ylang Ylang.</li></em>
-    </ul><p>Total interno seguro: al menos 32 aceites</p>
-    <p><b>🚨 No ingerir:</b> <em> Arborvitae, Cedarwood, Cypress, Douglas Fir, Eucalyptus, Spikenard, Wintergreen.</em></p> 
-
-    <hr />
-
-  </div>
-</aside>
-
-  <h1>🌿 Guía Interactiva de Aceites Esenciales dōTERRA 🧠</h1>
-<div style="text-align: center;">
-  <img src="icon-192.png" width="70" height="60">
-</div>
-  <div class="tabs">
-    <button class="active" data-tab="uso">Por Uso</button>
-    <button data-tab="chakra">Por Chakra</button>
-    <button data-tab="emocion">Por Emoción</button>
+  <!-- Demande du nom -->
+  <div id="preguntaNombre">
+    <h1>Bonsoir 🌙<br> Comment t'appelles-tu ?</h1>
+    <input type="text" id="nombreInput" placeholder="Ton prénom..." class="input-nombre"/>
+    <br/>
+    <button id="btnComenzar" class="ayla-button">Commencer</button>
   </div>
 
-  <div class="search-section">
-    <input type="text" id="searchInput" placeholder="🔍 Buscar por uso, chakra, emoción..." />
+  <!-- Section de bienvenue -->
+  <div id="bienvenida" class="hidden">
+    <h1>Bonjour <span id="nombreUsuario"></span> !</h1>
+    <p>Merci d'explorer le monde naturel avec nous.<br>Accède à ta mini guide des huiles 💜</p>
+    <button id="btnVerGuia" class="ayla-button">🌿 Voir la Mini Guide</button>
   </div>
 
-  <div id="tabContent">
-    <table id="uso" class="content-table"></table>
-    <table id="chakra" class="content-table" hidden></table>
-    <table id="emocion" class="content-table" hidden></table>
-  </div>
+ <footer style="text-align: center;"> <small>© TIE Bien-être | Guide Holistique Interactif de Huiles Essences dōTERRA 2025 | Tous droits réservés | Canada 
+  </small></footer>
 
-  <section class="stepper">
-    <h2>💚 Modo Terapéutico Paso a Paso</h2>
-    <h3 id="stepTitle">Selecciona una fila en cualquier tabla</h3>
-    <ol id="stepsList"></ol>
-    <button id="clearBtn" class="hidden">Limpiar selección</button>
-     <div style="text-align: center;">
-  <img src="icon-192.png" width="70" height="60">
-</div>
-  </section>
-
-  <footer style="text-align: center;"> © TIE Bien-être | Guide Holistique Interactif des Huiles Essentielles dōTERRA 2025 | Tous droits réservés | Canada 
-  </footer>
-
-  <script src="aceites.js"></script>
-    <script>
-    const sidebar = document.getElementById("sidebar");
-    const toggleSidebar = document.getElementById("toggleSidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
-
-    toggleSidebar.onclick = () => {
-      sidebar.classList.toggle("collapsed");
-    };
-
-    closeSidebar.onclick = () => {
-      sidebar.classList.add("collapsed");
-    };
-  </script>
   <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(() => console.log("✅ Service Worker registrado"))
-      .catch(err => console.error("❌ Error al registrar SW:", err));
-  }
-</script>
+    const nombreGuardado = localStorage.getItem('nombre_usuario');
+    const bienvenidaDiv = document.getElementById('bienvenida');
+    const preguntaNombreDiv = document.getElementById('preguntaNombre');
+    const nombreSpan = document.getElementById('nombreUsuario');
+
+    function guardarNombre() {
+      const nombre = document.getElementById('nombreInput').value.trim();
+      if (nombre) {
+        localStorage.setItem('nombre_usuario', nombre);
+        nombreSpan.textContent = nombre;
+        bienvenidaDiv.classList.remove('hidden');
+        preguntaNombreDiv.classList.add('hidden');
+      } else {
+        alert("Veuillez entrer votre prénom pour continuer.");
+      }
+    }
+
+    function abrirGuia() {
+      window.open('https://echeverriaclau.github.io/GuiaAceitesEsencialesTIEBien-etre/', '_blank'); 
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (nombreGuardado) {
+        nombreSpan.textContent = nombreGuardado;
+        bienvenidaDiv.classList.remove('hidden');
+        preguntaNombreDiv.classList.add('hidden');
+      }
+
+      document.getElementById('btnComenzar').addEventListener('click', guardarNombre);
+      document.getElementById('btnVerGuia').addEventListener('click', abrirGuia);
+    });
+  </script>
 </body>
 </html>
